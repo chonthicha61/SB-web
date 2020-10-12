@@ -4,9 +4,9 @@
     <div class="hero-wrapper">
       <div class="component-wrapper">
         <div class="hero">
-          <img src="@/assets/logo.png" class="logo" style="float:left" />
-          <h1>Webblot from nodejs + vuejs Ebook</h1>
-          <p>By Gooddev.ME</p>
+          <img src="@/assets/scientist.png"  height="100%" class="logo" style="float:left" />
+          <h1>ระบบการเข้าใช้งานอุปกรณ์</h1>
+          <p>By Steve Black</p>
         </div>
 
         <div class="clearfix"></div>
@@ -220,7 +220,7 @@ export default {
   margin-left: auto;
   margin-right: auto;
   border-radius: 5px;
-  background: darkcyan;
+  background: seagreen;
   height: 250px;
   color: white;
   padding: 20px;

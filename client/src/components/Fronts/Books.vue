@@ -4,12 +4,12 @@
     <div class="hero-wrapper">
       <div class="component-wrapper">
         <div class="hero">
-          <img src="@/assets/logo.png" class="logo" style="float:left" />
-          <h1>ร้านหนังสือออนไลน์สั่ง ซื้อได้เลยครับ</h1>
-          <p>By Gooddev.ME</p>
+          <img src="@/assets/scientist.png" height="100%" class="logo" style="float:left" />
+          <h1>เลือกอุปกรณ์ที่จะใช้งานได้เลย</h1>
+          <p>By Steve Black</p>
         </div>
         <div class="container new-book">
-          <h2>หนังสือมาใหม่</h2>
+          <h2>อุปกรณ์ที่เพิ่มมาใหม่</h2>
           <div class="row">
             <div class="col-md-3" v-for="book in newBooks" v-bind:key="book.id">
               <div v-if="book.thumbnail != 'null'">
@@ -40,7 +40,7 @@
           <div>
             <form class="form-inline form-search">
               <span>
-                <strong>จํานวน book:</strong>
+                <strong>จำนวน อุปกรณ์:</strong>
                 {{results.length}}
               </span>
               &nbsp;
@@ -73,7 +73,7 @@
         <transition-group name="fade">
           <div v-for="book in books" v-bind:key="book.id" class="book-list">
              <div class="popup-cart" v-if="carts.length">
-            <h3>ตระกร้าสินค้า</h3>
+            <h3>ตระกร้าอุปกรณ์</h3>
             <ul class="cart">
               <li v-for="cart in carts" v-bind:key="cart.id">
                 <div>{{ cart.booktitle }} จํานวน {{ cart.qty}} x {{ cart.prices }}</div>
@@ -86,7 +86,7 @@
             <hr />
             <p>รวมทั้งสิน: {{total | getNumberWithCommas}} บาท</p>
             <button class="btn btn-xs btn-danger" v-on:click.prevent="sendBuy">
-              <i class="fas fa-check-square"></i> ทำการสั่งซื้อ
+              <i class="fas fa-check-square"></i> ยืนยันการเลือกใช้งาน
             </button>
           </div>
             <!-- <p>id: {{ book.id }}</p> -->
@@ -368,7 +368,7 @@ export default {
 .hero {
   margin-top: 80px;
   border-radius: 5px;
-  background: lightslategray;
+  background: seagreen;
   height: 250px;
   color: white;
   padding: 20px;

@@ -4,9 +4,9 @@
         <div v-if="blog" >
             <div class="hero-wrapper">
                 <div class="hero">
-                    <img src="@/assets/logo.png" class="logo" style="float:left">
-                    <h1>Webblot from nodejs + vuejs Ebook</h1>
-                    <p>By Gooddev.ME</p>
+                    <img src="@/assets/scientist.png"  height="100%" class="logo" style="float:left">
+                    <h1>โพสเกี่ยวกับเครื่องชั่งสาร</h1>
+                    <p>By Steve Black</p>
                 </div>
             </div>
             <div class="blog-wrapper" v-if="blog != null">

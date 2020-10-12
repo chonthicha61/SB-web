@@ -4,7 +4,7 @@
     <div class="blog-header">
       <br />
       <br />
-      <h2>ส่วนจัดการ Blogs</h2>
+      <h2>จัดการ โพส</h2>
       <div>
         <form class="form-inline form-search">
           <div class="form-group">
@@ -25,8 +25,8 @@
       </div>
 
       <div class="create-blog">
-        <button class="btn btn-success btn-sm" v-on:click="navigateTo('/blog/create')">Create blog</button>
-        <strong>จํานวน blog:</strong>
+        <button class="btn btn-success btn-sm" v-on:click="navigateTo('/blog/create')">สร้างโพส</button>
+        <strong>จํานวน โพส:</strong>
         {{results.length}}
       </div>
 
@@ -35,7 +35,7 @@
           <a v-on:click.prevent="setCategory(cate)" href="#">{{ cate }}</a>
         </li>
         <li class="clear">
-          <a v-on:click.prevent="setCategory(' ')" href="#">Clear</a>
+          <a v-on:click.prevent="setCategory(' ')" href="#">ล้าง</a>
         </li>
       </ul>
       <div class="clearfix"></div>
@@ -67,9 +67,9 @@
           </p>
           <!-- <p>status: {{ blog.status }}</p> -->
           <p>
-            <button class="btn btn-sm btn-info" v-on:click="navigateTo('/blog/'+ blog.id)">View Blog</button>
-            <button class="btn btn-sm btn-warning" v-on:click="navigateTo('/blog/edit/'+ blog.id)">Edit blog</button>
-            <button class="btn btn-sm btn-danger" v-on:click="deleteBlog(blog)">Delete</button>
+            <button class="btn btn-sm btn-info" v-on:click="navigateTo('/blog/'+ blog.id)">ดูโพส</button>
+            <button class="btn btn-sm btn-warning" v-on:click="navigateTo('/blog/edit/'+ blog.id)">แก้ไขโพส</button>
+            <button class="btn btn-sm btn-danger" v-on:click="deleteBlog(blog)">ลบ</button>
           </p>
           <p>
             <a class="btn btn-danger btn-sm" href="#" v-on:click.prevent="suspend(blog.id)">

@@ -3,9 +3,9 @@
     <main-header navsel="front"></main-header>
     <div v-if="book">
       <div class="hero">
-        <img src="@/assets/logo.png" class="logo" style="float:left" />
-        <h1>ร้านหนังสือออนไลน์สั่ง ซื้อได้เลยครับ</h1>
-        <p>By Gooddev.ME</p>
+        <img src="@/assets/scientist.png" height="100%" class="logo" style="float:left" />
+        <h1>เลือกอุปกรณ์ที่จะใช้งานได้เลย</h1>
+          <p>By Steve Black</p>
       </div>
       <div class="book-wrapper" v-if="book != null">
         <h1>{{ book.title }}</h1>
@@ -87,7 +87,7 @@ export default {
 .hero {
   margin-top: 80px;
   border-radius: 5px;
-  background: lightslategray;
+  background: seagreen;
   height: 250px;
   color: white;
   padding: 20px;

@@ -5,7 +5,7 @@
       <div class="container">
         <div class="navbar-header">
           <a class="navbar-brand navbar-link" href="#" von:click.prevent="navigateTo('/dashboard')">
-            <img src="@/assets/logo.png" id="logo" />
+            <img src="@/assets/scientist.png" id="logo" />
           </a>
           <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1">
             <span class="sr-only">Toggle navigation</span>
@@ -18,12 +18,12 @@
           <ul class="nav navbar-nav navbar-right">
             <li role="presentation">
               <router-link :to="{name: 'front'}">
-                <i class="fas fa-home"></i> Home
+                <i class="fas fa-home"></i> หน้าแรก
               </router-link>
             </li>
             <li role="presentation">
               <router-link :to="{name: 'front-books'}">
-                <i class="fas fa-book-open"></i> books
+                <i class="far fa-clipboard"></i> อุปกรณ์
               </router-link>
             </li>
 
@@ -36,10 +36,7 @@
               </li>
             </transition>
             <li v-if="isUserLoggedIn" role="presentation">
-              <a href="#" v-on:click.prevent="logout">Logout</a>
-            </li>
-            <li v-if="!isUserLoggedIn" role="presentation">
-              <a href="#" v-on:click.prevent="showRegister = true ;showLogin = false">Register</a>
+              <a href="#" v-on:click.prevent="logout">ออกจากระบบ</a>
             </li>
           </ul>
         </div>
@@ -47,86 +44,7 @@
     </div>
     <div class="modal" v-if="showRegister">
       <transition name="fade">
-        <div class="login-wrapperr">
-          <h3>Client Register</h3>
-          <form v-on:submit.prevent="clientRegister" class="formhorizontal">
-            <div class="form-group">
-              <label class="control-label col-md-3">Email:</label>
-              <div class="col-md-9">
-                <input
-                  required
-                  placeholder="email"
-                  type="email"
-                  v-model="client.email"
-                  class="form-control"
-                />
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="control-label col-md-3">Password:</label>
-              <div class="col-md-9">
-                <input
-                  required
-                  type="password"
-                  placeholder="password"
-                  v-model="client.password"
-                  class="form-control"
-                />
-              </div>
-              <br>
-            </div>
-
-
-            <div class="form-group">
-              <label class="control-label col-md-3">Name:</label>
-              <div class="col-md-9">
-                <input
-                  required
-                  type="text"
-                  placeholder="name"
-                  v-model="client.name"
-                  class="form-control"
-                />
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="control-label col-md-3">Lastname:</label>
-              <div class="col-md-9">
-                <input
-                  required
-                  type="text"
-                  placeholder="lastname"
-                  v-model="client.lastname "
-                  class="form-control"
-                />
-              </div>
-              <br>
-              <br>
-              <br>
-              <br>
-
-            </div>
-            <div class="form-group">
-              <div class="col-md-offset-3 col-md-9">
-                <button class="btn btn-success btn-sm" type="submit">
-                  <i class="fas fa-key"></i> Register
-                </button>
-                <button
-                  v-on:click.prevent="showRegister = false"
-                  class="btn btn-danger btn-sm"
-                  type="button"
-                >
-                  <i class="fas fa-timescircle"></i> Close
-                </button>
-              </div>
-            </div>
-            <div class="error">
-              <p v-if="error">{{error}}</p>
-            </div>
-          </form>
-        </div>
+       
       </transition>
     </div>
     <transition name="fade">
@@ -210,13 +128,13 @@ export default {
       },
     };
   },
-  /*mounted() {
+  mounted() {
     if (!this.isUserLoggedIn) {
         this.$router.push({
             name: "front",
         });
     }
-  },*/
+  },
   computed: {
     ...mapState([
         "isUserLoggedIn", 
@@ -301,7 +219,7 @@ export default {
   margin-top: -20px;
 }
 .navbar-inverse {
-  background-color: #51415f;
+  background-color: seagreen;
 }
 .navbar-inverse .navbar-nav > li > a {
   color: #dbdbf6;

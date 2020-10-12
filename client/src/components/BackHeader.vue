@@ -4,7 +4,7 @@
     <div class="container">
         <div class="navbar-header">
             <a class="navbar-brand navbar-link" href="#" v-on:click.prevent="navigateTo('/dashboard')">
-                <img src="../assets/logo.png" id="logo">
+                <img src="../assets/scientist.png" id="logo">
             </a>
             <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1">
                 <span class="sr-only">Toggle navigation</span>
@@ -14,16 +14,16 @@
         </div>
         <div class="collapse navbar-collapse" id="navcol-1">
             <ul class="nav navbar-nav navbar-right">
-                <li><router-link :to="{name: 'blogs'}" >Blogs</router-link></li>
-                <li role="presentation"><router-link :to="{name: 'books'}">Books</router-link></li>
-                <li><router-link :to="{name: 'users'}" >Users</router-link></li>
-                <li><router-link :to="{name: 'comments'}" >Comments</router-link></li>
-                <li><router-link :to="{name: 'Cartlist'}" >Cartlist</router-link></li>
-                <li v-if="!isUserLoggedIn"><router-link :to="{name: 'login'}" >Login</router-link></li>
+                <li><router-link :to="{name: 'blogs'}" >โพส</router-link></li>
+                <li role="presentation"><router-link :to="{name: 'books'}">อุปกรณ์</router-link></li>
+                <li><router-link :to="{name: 'users'}" >ผู้ใช้</router-link></li>
+                <li><router-link :to="{name: 'comments'}" >คอมเม้น</router-link></li>
+                <li><router-link :to="{name: 'Cartlist'}" >ประวัติการใช้งาน</router-link></li>
+                <li v-if="!isUserLoggedIn"><router-link :to="{name: 'login'}" >เข้าสู่ระบบ</router-link></li>
                 <transition name="fade">
                     <li v-if="isUserLoggedIn" role="presentation"><a href="#">{{user.name}}</a></li>
                 </transition>
-                <li v-if="isUserLoggedIn" role="presentation"><a href="#" v-on:click.prevent="logout">Logout</a></li>
+                <li v-if="isUserLoggedIn" role="presentation"><a href="#" v-on:click.prevent="logout">ออกจากระบบ</a></li>
             </ul>
         </div>
     </div>

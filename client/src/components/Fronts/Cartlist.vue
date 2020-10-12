@@ -8,13 +8,13 @@
       <div class="form-wrapper" v-if="user != null">
         <div class="form-horizontal">
           <div class="form-group">
-            <label for class="control-label col-md-2">Name:</label>
+            <label for class="control-label col-md-2">ชื่อ:</label>
             <div class="col-md-8">
               <input class="form-control" type="text" v-model="user.name" disabled />
             </div>
           </div>
           <div class="form-group">
-            <label for class="control-label col-md-2">Lastname:</label>
+            <label for class="control-label col-md-2">นามสกุล:</label>
             <div class="col-md-8">
               <input class="form-control" type="text" v-model="user.lastname" disabled />
             </div>
@@ -33,23 +33,23 @@
       <div class="rows">
         <div class="col-md-12">
           <div class="transection-wrapper">
-            <h4>รายละเอียดการสั่ง</h4>
+            <h4>รายละเอียดการการใช้งาน</h4>
             <ul class="trasection-list">
               <li v-for="transection in transections" v-bind:key="transection.id">
-                <h4>{{ transection.booktitle }} จํานวน {{ transection.qty}} x {{ transection.prices }}</h4>
+                <h4>{{ transection.booktitle }} </h4>
                 <p>
-                  <strong>ราคารวม :</strong>
-                  {{ transection.qty * transection.prices | getNumberWithCommas }} บาท
+                  <strong>จำนวนครั้งที่ใช้ :</strong>
+                  {{ transection.qty * transection.prices | getNumberWithCommas }} ครั้ง
                 </p>
                 <p>
-                  <strong>สถานะลูกค้า :</strong>
+                  <strong>สถานะการใช้งาน :</strong>
                   {{ transection.clientStatus}}
                 </p>
                 <p>
-                  <button v-on:click.prevent="sendPaid(transection.id)" class="btn btnxs btn-success">ยืนยันการชําระเงิน</button>
+                  <button v-on:click.prevent="sendPaid(transection.id)" class="btn btnxs btn-success">ใช้งานเสร็จแล้ว</button>
                 </p>
                 <p>
-                  <strong>สถานะร้านค้า :</strong>
+                  <strong>สถานะการตรวจสอบ :</strong>
                   {{ transection.shopStatus}}
                 </p>
                 <p>
@@ -63,7 +63,7 @@
       </div>
     </div>
     <div v-else class="container">
-      <div class="trasection-null">ไม่มีรายการสั่งซื้อขณะนี้</div>
+      <div class="trasection-null">ไม่มีการใช้งาน</div>
     </div>
   </div>
 </template>
@@ -105,7 +105,7 @@ export default {
     async sendPaid(id) {
       let transection = {
         id: id,
-        clientStatus: "ชําระแล้ว",
+        clientStatus: "ใช้งานเสร็จแล้ว",
       };
       try {
         await BuysService.put(transection);

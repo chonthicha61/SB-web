@@ -5,7 +5,7 @@
       <br />
       <br />
       <br />
-      <h2>ส่วนจัดการ Users</h2>
+      <h2>Manage Users</h2>
       <div>
         <form class="form-inline form-search">
           <div class="form-group">
@@ -29,8 +29,8 @@
         <button
           class="btn btn-success btn-sm"
           v-on:click="navigateTo('/user/create')"
-        >สร้างผู้ใช้งาน</button>
-        <strong>จํานวนผู้ใช้งาน {{users.length}}</strong>
+        >Create Users</button>
+        <strong>Users {{users.length}}</strong>
       </div>
       <br />
     </div>
@@ -38,7 +38,7 @@
       <div v-for="user in users" v-bind:key="user.id" class="blog-list">
         <div class="blog-info">
           <p>id: {{ user.id }}</p>
-          <p>ชื่อ-นามสกุล: {{ user.name }} - {{ user.lastname }}</p>
+          <p>name: {{ user.name }} - {{ user.lastname }}</p>
           <p>email: {{ user.email }}</p>
           <p>password: {{ user.password }}</p>
           <p>status: {{ user.status }}</p>
@@ -48,12 +48,12 @@
             <button
               class="btn btn-sm btn-info"
               v-on:click="navigateTo('/user/'+ user.id)"
-            >ดูข้อมูลผู้ใช้</button>
+            >view data user</button>
             <button
               class="btn btn-sm btn-warning"
               v-on:click="navigateTo('/user/edit/'+ user.id)"
-            >แก้ไขข้อมูล</button>
-            <button class="btn btn-sm btn-danger" v-on:click="deleteUser(user)">ลบข้อมูล</button>
+            >edit data</button>
+            <button class="btn btn-sm btn-danger" v-on:click="deleteUser(user)">delete</button>
           </p>
           <p>
             <a class="btn btn-danger btn-sm" href="#" v-on:click.prevent="pauseUser(user.id)">
@@ -74,7 +74,7 @@
     <div id="blog-list-bottom">
       <div class="empty-blog" v-if="users.length === 0 && loading === false">*** ไม่มีข้อมูล***</div>
       <div class="empty-blog" v-if="users.length === 0 && loading === true">*** ไม่มีข้อมูล***</div>
-      <div class="blog-load-finished" v-if="users.length === results.length && results.length > 0" >โหลดข้อมูลครบแล้ว</div>
+      <div class="blog-load-finished" v-if="users.length === results.length && results.length > 0" >Data loaded</div>
     </div>
   </div>
 </template>

@@ -4,17 +4,17 @@
     <div class="user-info">
       <br />
       <br />
-      <h1>แสดงข้อมูลผู้ใช้งาน</h1>
+      <h1>Show data user</h1>
       <div class="form-wrapper" v-if="user != null">
         <div class="form-horizontal">
           <div class="form-group">
-            <label for class="control-label col-md-2">ชื่อ:</label>
+            <label for class="control-label col-md-2">name:</label>
             <div class="col-md-8">
               <input class="form-control" type="text" v-model="user.name" disabled />
             </div>
           </div>
           <div class="form-group">
-            <label for class="control-label col-md-2">นามสกุล:</label>
+            <label for class="control-label col-md-2">lastname:</label>
             <div class="col-md-8">
               <input class="form-control" type="text" v-model="user.lastname" disabled />
             </div>
@@ -33,23 +33,23 @@
       <div class="rows">
         <div class="col-md-12">
           <div class="transection-wrapper">
-            <h4>รายละเอียดการการใช้งาน</h4>
+            <h4>รายละเอียดการสั่ง</h4>
             <ul class="trasection-list">
               <li v-for="transection in transections" v-bind:key="transection.id">
                 <h4>{{ transection.booktitle }} </h4>
                 <p>
-                  <strong>จำนวนครั้งที่ใช้ :</strong>
-                  {{ transection.qty * transection.prices | getNumberWithCommas }} ครั้ง
+                  <strong>ราคารวมสินค้า :</strong>
+                  {{ transection.qty * transection.prices | getNumberWithCommas }} บาท
                 </p>
                 <p>
-                  <strong>สถานะการใช้งาน :</strong>
+                  <strong>สถานะการชำระเงิน :</strong>
                   {{ transection.clientStatus}}
                 </p>
                 <p>
-                  <button v-on:click.prevent="sendPaid(transection.id)" class="btn btnxs btn-success">ใช้งานเสร็จแล้ว</button>
+                  <button v-on:click.prevent="sendPaid(transection.id)" class="btn btnxs btn-success">ชำระแล้ว</button>
                 </p>
                 <p>
-                  <strong>สถานะการตรวจสอบ :</strong>
+                  <strong>สถานะการจัดส่งสินค้า :</strong>
                   {{ transection.shopStatus}}
                 </p>
                 <p>
@@ -105,7 +105,7 @@ export default {
     async sendPaid(id) {
       let transection = {
         id: id,
-        clientStatus: "ใช้งานเสร็จแล้ว",
+        clientStatus: "ชำระแล้ว",
       };
       try {
         await BuysService.put(transection);

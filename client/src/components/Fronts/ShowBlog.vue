@@ -4,9 +4,9 @@
         <div v-if="blog" >
             <div class="hero-wrapper">
                 <div class="hero">
-                    <img src="@/assets/scientist.png"  height="100%" class="logo" style="float:left">
-                    <h1>โพสเกี่ยวกับเครื่องชั่งสาร</h1>
-                    <p>By Steve Black</p>
+                    <img src="@/assets/beer.png"  height="100%" class="logo" style="float:left">
+                    <h1>Post about News information</h1>
+                    <p>By AB InBev</p>
                 </div>
             </div>
             <div class="blog-wrapper" v-if="blog != null">
@@ -71,7 +71,7 @@
     .hero {
         margin-top: 80px;
         border-radius: 5px;
-        background: darkcyan;
+        background: rgb(91, 94, 92);
         height:250px;
         color:white;
         padding: 20px;

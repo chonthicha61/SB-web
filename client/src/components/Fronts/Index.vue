@@ -4,9 +4,9 @@
     <div class="hero-wrapper">
       <div class="component-wrapper">
         <div class="hero">
-          <img src="@/assets/scientist.png"  height="100%" class="logo" style="float:left" />
-          <h1>ระบบการเข้าใช้งานอุปกรณ์</h1>
-          <p>By Steve Black</p>
+          <img src="@/assets/beer.png"  height="100%" class="logo" style="float:left" />
+          <h1>Craft Beer</h1>
+          <p>By AB InBev</p>
         </div>
 
         <div class="clearfix"></div>
@@ -14,7 +14,7 @@
           <div>
             <form class="form-inline form-search">
               <span>
-                <strong>จํานวน blog:</strong>
+                <strong> Post:</strong>
                 {{results.length}}
               </span>
               &nbsp;
@@ -71,7 +71,7 @@
                   class="btn btn-sm btn-info"
                   v-on:click="navigateTo('/front/read/'+ blog.id)"
                 >
-                  <i class="fab fa-readme"></i> View Blog
+                  <i class="fab fa-readme"></i> View Post
                 </button>
               </p>
             </div>
@@ -220,7 +220,7 @@ export default {
   margin-left: auto;
   margin-right: auto;
   border-radius: 5px;
-  background: seagreen;
+  background: rgb(91, 94, 92);
   height: 250px;
   color: white;
   padding: 20px;

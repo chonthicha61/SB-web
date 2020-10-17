@@ -3,7 +3,7 @@
         <main-header navsel="back"></main-header>
         <div class="blog-header">
             <br><br><br>
-            <h2>ส่วนจัดการ Comments</h2>
+            <h2>Comments</h2>
             
             <div>
                 <form class="form-inline form-search">
@@ -16,7 +16,7 @@
                 </form>
             </div>
             <div class="create-blog">
-                <h4>จํานวน comment {{comments.length}}</h4>
+                <h4>comment {{comments.length}}</h4>
             </div>
         </div>
         <div v-for="comment in comments" v-bind:key="comment.id" class="blog-list">
@@ -25,14 +25,14 @@
             <p>blog id: {{ comment.blogId }}</p>
             <p>comment: {{ comment.comment }}</p>
             <p>
-                <button class="btn btn-sm btn-info" v-on:click="navigateTo('/blog/'+ comment.blogId)">ดูบล็อกที่ Comment</button> 
-                <button class="btn btn-sm btn-danger" v-on:click="deleteComment(comment)">ลบข้อมูล</button>
+                <button class="btn btn-sm btn-info" v-on:click="navigateTo('/blog/'+ comment.blogId)">view postComment</button> 
+                <button class="btn btn-sm btn-danger" v-on:click="deleteComment(comment)">delete</button>
             </p>
         </div>
         <div id="blog-list-bottom">
-            <div class="empty-blog" v-if="comments.length === 0 && loading === false">*** ไม่มีข้อมูล***</div>
-            <div class="empty-blog" v-if="comments.length === 0 && loading === true">*** ไม่มีข้อมูล***</div>
-            <div class="blog-load-finished" v-if="comments.length === results.length && results.length > 0" >โหลดข้อมูลครบแล้ว</div>
+            <div class="empty-blog" v-if="comments.length === 0 && loading === false">*** No data***</div>
+            <div class="empty-blog" v-if="comments.length === 0 && loading === true">*** No data***</div>
+            <div class="blog-load-finished" v-if="comments.length === results.length && results.length > 0" >data loaded</div>
         </div>
     </div>
 </template>

@@ -5,7 +5,7 @@
       <div class="container">
         <div class="navbar-header">
           <a class="navbar-brand navbar-link" href="#" von:click.prevent="navigateTo('/dashboard')">
-            <img src="@/assets/scientist.png" id="logo" />
+            <img src="@/assets/beer.png" id="logo" />
           </a>
           <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1">
             <span class="sr-only">Toggle navigation</span>
@@ -23,7 +23,7 @@
             </li>
             <li role="presentation">
               <router-link :to="{name: 'front-books'}">
-                <i class="far fa-clipboard"></i> อุปกรณ์
+                <i class="far fa-clipboard"></i> สินค้า
               </router-link>
             </li>
 
@@ -219,7 +219,7 @@ export default {
   margin-top: -20px;
 }
 .navbar-inverse {
-  background-color: seagreen;
+  background-color: rgb(91, 94, 92);
 }
 .navbar-inverse .navbar-nav > li > a {
   color: #dbdbf6;

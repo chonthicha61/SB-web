@@ -4,12 +4,12 @@
     <div class="hero-wrapper">
       <div class="component-wrapper">
         <div class="hero">
-          <img src="@/assets/scientist.png" height="100%" class="logo" style="float:left" />
-          <h1>เลือกอุปกรณ์ที่จะใช้งานได้เลย</h1>
-          <p>By Steve Black</p>
+          <img src="@/assets/beer.png" height="100%" class="logo" style="float:left" />
+          <h1>เลือกสินค้า</h1>
+          <p>By AB InBev</p>
         </div>
         <div class="container new-book">
-          <h2>อุปกรณ์ที่เพิ่มมาใหม่</h2>
+          <h2>สินค้าเข้าใหม่</h2>
           <div class="row">
             <div class="col-md-3" v-for="book in newBooks" v-bind:key="book.id">
               <div v-if="book.thumbnail != 'null'">
@@ -40,7 +40,7 @@
           <div>
             <form class="form-inline form-search">
               <span>
-                <strong>จำนวน อุปกรณ์:</strong>
+                <strong>จำนวน สินค้า:</strong>
                 {{results.length}}
               </span>
               &nbsp;
@@ -86,7 +86,7 @@
             <hr />
             <p>รวมทั้งสิน: {{total | getNumberWithCommas}} บาท</p>
             <button class="btn btn-xs btn-danger" v-on:click.prevent="sendBuy">
-              <i class="fas fa-check-square"></i> ยืนยันการเลือกใช้งาน
+              <i class="fas fa-check-square"></i> ยืนยันการสั่งซื้อ
             </button>
           </div>
             <!-- <p>id: {{ book.id }}</p> -->
@@ -354,7 +354,7 @@ export default {
   margin-left: auto;
   margin-right: auto;
   border-radius: 5px;
-  background: lightslategray;
+  background: rgb(91, 94, 92);
   height: 250px;
   color: white;
   padding: 20px;
@@ -368,7 +368,7 @@ export default {
 .hero {
   margin-top: 80px;
   border-radius: 5px;
-  background: seagreen;
+  background: rgb(91, 94, 92);
   height: 250px;
   color: white;
   padding: 20px;

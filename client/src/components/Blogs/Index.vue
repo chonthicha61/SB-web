@@ -4,7 +4,7 @@
     <div class="blog-header">
       <br />
       <br />
-      <h2>จัดการ โพส</h2>
+      <h2>manage Post</h2>
       <div>
         <form class="form-inline form-search">
           <div class="form-group">
@@ -25,8 +25,8 @@
       </div>
 
       <div class="create-blog">
-        <button class="btn btn-success btn-sm" v-on:click="navigateTo('/blog/create')">สร้างโพส</button>
-        <strong>จํานวน โพส:</strong>
+        <button class="btn btn-success btn-sm" v-on:click="navigateTo('/blog/create')">New Post</button>
+        <strong>post total:</strong>
         {{results.length}}
       </div>
 
@@ -35,7 +35,7 @@
           <a v-on:click.prevent="setCategory(cate)" href="#">{{ cate }}</a>
         </li>
         <li class="clear">
-          <a v-on:click.prevent="setCategory(' ')" href="#">ล้าง</a>
+          <a v-on:click.prevent="setCategory(' ')" href="#">clear</a>
         </li>
       </ul>
       <div class="clearfix"></div>
@@ -67,9 +67,9 @@
           </p>
           <!-- <p>status: {{ blog.status }}</p> -->
           <p>
-            <button class="btn btn-sm btn-info" v-on:click="navigateTo('/blog/'+ blog.id)">ดูโพส</button>
-            <button class="btn btn-sm btn-warning" v-on:click="navigateTo('/blog/edit/'+ blog.id)">แก้ไขโพส</button>
-            <button class="btn btn-sm btn-danger" v-on:click="deleteBlog(blog)">ลบ</button>
+            <button class="btn btn-sm btn-info" v-on:click="navigateTo('/blog/'+ blog.id)">view post</button>
+            <button class="btn btn-sm btn-warning" v-on:click="navigateTo('/blog/edit/'+ blog.id)">edit post</button>
+            <button class="btn btn-sm btn-danger" v-on:click="deleteBlog(blog)">delete</button>
           </p>
           <p>
             <a class="btn btn-danger btn-sm" href="#" v-on:click.prevent="suspend(blog.id)">
@@ -85,9 +85,9 @@
     </transition-group>
 
     <div id="blog-list-bottom">
-      <div class="empty-blog" v-if="blogs.length === 0 && loading === false">*** ไม่มีข้อมูล***</div>
-      <div class="empty-blog" v-if="blogs.length === 0 && loading === true">*** ไม่มีข้อมูล***</div>
-      <div class="blog-load-finished" v-if="blogs.length === results.length && results.length > 0" >โหลดข้อมูลครบแล้ว</div>
+      <div class="empty-blog" v-if="blogs.length === 0 && loading === false">*** No data***</div>
+      <div class="empty-blog" v-if="blogs.length === 0 && loading === true">*** No data***</div>
+      <div class="blog-load-finished" v-if="blogs.length === results.length && results.length > 0" >data loaded</div>
     </div>
   </div>
 </template>

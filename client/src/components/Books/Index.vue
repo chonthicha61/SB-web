@@ -4,7 +4,7 @@
     <div class="book-header">
       <br />
       <br />
-      <h2>ส่วนจัดการ Books</h2>
+      <h2>Manage product</h2>
       <div>
         <form class="form-inline form-search">
           <div class="form-group">
@@ -25,8 +25,8 @@
       </div>
 
       <div class="create-book">
-        <button class="btn btn-success btn-sm" v-on:click="navigateTo('/book/create')">Create book</button>
-        <strong>จํานวน book:</strong>
+        <button class="btn btn-success btn-sm" v-on:click="navigateTo('/book/create')">Add product</button>
+        <strong>product total:</strong>
         {{results.length}}
       </div>
 
@@ -67,11 +67,11 @@
           </p>
           <p>
             <strong>Prices:</strong>
-            {{ book.prices | getNumberWithCommas }} บาท
+            {{ book.prices | getNumberWithCommas }} bath
           </p>
           <!-- <p>status: {{ book.status }}</p> -->
           <p>
-            <button class="btn btn-sm btn-info" v-on:click="navigateTo('/book/'+ book.id)">View Book</button>
+            <button class="btn btn-sm btn-info" v-on:click="navigateTo('/book/'+ book.id)">View product</button>
             <button
               class="btn btn-sm btn-warning"
               v-on:click="navigateTo('/book/edit/'+ book.id)"
@@ -92,12 +92,12 @@
     </transition-group>
 
     <div id="book-list-bottom">
-      <div class="empty-book" v-if="books.length === 0 && loading === false">*** ไม่มีข้อมูล***</div>
-      <div class="empty-book" v-if="books.length === 0 && loading === true">*** ไม่มีข้อมูล***</div>
+      <div class="empty-book" v-if="books.length === 0 && loading === false">*** No data***</div>
+      <div class="empty-book" v-if="books.length === 0 && loading === true">*** No data***</div>
       <div
         class="book-load-finished"
         v-if="books.length === results.length && results.length > 0"
-      >โหลดข้อมูลครบแล้ว</div>
+      >Data loaded</div>
     </div>
   </div>
 </template>
